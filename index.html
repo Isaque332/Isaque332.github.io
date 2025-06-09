@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Gaby & Isaque</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: black;
+      background-image: repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255, 192, 203, 0.05) 20px, rgba(255, 192, 203, 0.05) 40px);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #ff69b4;
+    }
+
+    p {
+      color: #ffc0cb;
+      font-size: 1.2em;
+      margin-top: 1em;
+    }
+
+    #timer {
+      font-size: 1.6em;
+      margin: 20px 0;
+      font-weight: bold;
+      color: #ffb6c1;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .hearts {
+      font-size: 2em;
+      margin-top: 20px;
+      color: #ff69b4;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Gaby & Isaque 💞</h1>
+    <div class="hearts">💞 💞 💞 💞 💞 💞 💞</div>
+    <p>Eu te amo há:</p>
+    <div id="timer">Calculando...</div>
+
+    <p>
+      Meu amor por ti vem bem antes deste contador. Desde a primeira vez que te vi, de alguma forma, eu sabia que você era alguém muito especial, mesmo não te conhecendo, eu te amei💝 
+    </p>
+
+    <p>
+      Para mim, a real data desde que te amei foi em 24/05/2023, já para Deus, eu já te amava na eternidade onde nossa compreensão de tempo se perde. Deus criou o amor para Ele e nos possibilitou amar a nós mesmos e ao outros como fosse parte nossa, este carinho que Ele tem entre a gente ultrapassa todas as barreiras físicas e espirituais tornando-nos próximos Dele. Isso significa que meu amor por ti ultrapassa todas as barreiras, tudo aquilo que Deus permitiu ser ultrapassado pelo amar🥰. 
+    </p>
+
+    <p>
+      Bendito seja o Senhor, criador dos céus e da terra, criador da vida, do amor e criador do maior presente que eu poderia ter... Você💖. Te amei, te amo, te amarei💞
+    </p>
+
+    <!-- Se quiser, adicione uma imagem -->
+    <!-- <img src="URL_DA_IMAGEM" alt="Gaby e Isaque"> -->
+
+    <div class="hearts">💞 💞 💞 💞 💞 💞 💞</div>
+  </div>
+
+  <script>
+    const startDate = new Date("2023-11-30T00:00:00");
+
+    function updateTimer() {
+      const now = new Date();
+      let diff = Math.floor((now - startDate) / 1000);
+
+      const years = Math.floor(diff / (3600 * 24 * 365));
+      diff %= 3600 * 24 * 365;
+      const months = Math.floor(diff / (3600 * 24 * 30));
+      diff %= 3600 * 24 * 30;
+      const days = Math.floor(diff / (3600 * 24));
+      diff %= 3600 * 24;
+      const hours = String(Math.floor(diff / 3600)).padStart(2, '0');
+      diff %= 3600;
+      const minutes = String(Math.floor(diff / 60)).padStart(2, '0');
+      const seconds = String(diff % 60).padStart(2, '0');
+
+      document.getElementById("timer").innerText =
+        `${years}a ${months}m ${days}d ${hours}:${minutes}:${seconds}`;
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  </script>
+</body>
+</html>
